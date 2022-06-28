@@ -1,0 +1,13 @@
+{
+  "env": {
+    "jest": true,
+    "node": true
+  },
+  "extends": ["airbnb-base"],
+  "parser": "@babel/eslint-parser",
+  "rules": {
+    "arrow-body-style": "off",
+    "arrow-parens": ["error", "always"],
+    "max-len": ["warn", { "code": 100 }]
+  }
+}
