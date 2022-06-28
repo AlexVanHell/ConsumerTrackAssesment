@@ -2,6 +2,12 @@
 
 Cosumer Track's assesment written in Node JS
 
+## Install dependencies
+
+```bash
+$ npm install
+```
+
 ## Run
 
 ```bash
@@ -13,3 +19,5 @@ $ npm start -- path/to/access.log
 ```bash
 $ npm start -- /Users/alejandrovillarroel/Downloads/gobankingrates.com.access.log
 ```
+
+You will see the csv file inside `./output` directory

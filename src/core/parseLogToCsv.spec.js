@@ -1,11 +1,8 @@
-const Alpine = require('alpine');
-const byline = require('byline');
 const { stringify } = require('csv-stringify');
 const fs = require('fs');
-const maxmind = require('maxmind');
 const userAgentParser = require('ua-parser-js');
-const parseLogToCsv = require('./parseLogToCsv');
 const path = require('path');
+const parseLogToCsv = require('./parseLogToCsv');
 
 jest.mock('csv-stringify', () => ({
   stringify: jest.fn(),
@@ -16,7 +13,7 @@ describe('[Core] parseLogToCsv', () => {
   const stringifyPipeMock = jest.fn();
   const stringifyWriteMock = jest.fn();
 
-  const testLogPath = path.join(__dirname, '..', 'test', 'test.access.log');
+  const testLogPath = path.join(__dirname, '..', '..', 'tests', 'test.access.log');
 
   beforeEach(() => {
     jest.spyOn(fs, 'createWriteStream').mockImplementation(() => null);
@@ -51,6 +48,7 @@ describe('[Core] parseLogToCsv', () => {
       sizeCLF: '0',
       referrer: 'http://www.gobankingrates.com/banking/find-cds-now/',
       userAgent:
+        // eslint-disable-next-line max-len
         'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36',
       country: 'United States',
       state: '',

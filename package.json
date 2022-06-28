@@ -4,11 +4,13 @@
   "description": "Cosumer Track's assesment",
   "main": "src/index.js",
   "scripts": {
+    "format": "npm run lint -- --fix",
+    "lint": "eslint --config .eslintrc --ignore-path .eslintignore --ext .js src",
+    "prepare": "husky install",
     "start": "node src/index.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --coverageDirectory=coverage",
     "test:ci": "CI=true npm run test -- --detectOpenHandles",
-    "test:watch": "npm run test -- --watch",
-    "prepare": "husky install"
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
     "url": "https://github.com/AlexVanHell/ConsumerTrackAssesment/issues"
   },
   "homepage": "https://github.com/AlexVanHell/ConsumerTrackAssesment#readme",
+  "babel": {},
   "dependencies": {
     "@slaughtr/apache-log-parser": "^1.0.1",
     "alpine": "^0.2.1",
