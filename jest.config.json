@@ -1,0 +1,22 @@
+{
+  "verbose": true,
+  "clearMocks": true,
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
+  "collectCoverageFrom": [
+    "!<rootDir>/node_modules/",
+    "!<rootDir>/lib/",
+    "!coverage/lcov-report",
+    "!coverage/**",
+    "src/**/*.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/src/setupTests.js",
+    ".mock.ts"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "lines": 90,
+      "statements": 90
+    }
+  }
+}

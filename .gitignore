@@ -39,3 +39,7 @@ lerna-debug.log*
 # Environment variables
 .env
 !.env.example
+
+# Output dir
+output/*
+!output/.gitkeep
