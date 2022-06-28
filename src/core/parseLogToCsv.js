@@ -28,10 +28,13 @@ const columns = [
  */
 module.exports = async (logFilePath, csvFilePath) => {
   const geolite2 = await import('geolite2-redist');
-  const geoliteReader = await geolite2.open(geolite2.GeoIpDbName.City, (dbPath) => maxmind.open(dbPath));
+  const geoliteReader = await geolite2.open(
+    geolite2.GeoIpDbName.City,
+    (dbPath) => maxmind.open(dbPath),
+  );
 
   const readStream = fs.createReadStream(logFilePath, { encoding: 'utf-8' });
-  const stringifier = stringify({ header: true, columns: columns });
+  const stringifier = stringify({ header: true, columns });
   const csvWritableStream = fs.createWriteStream(csvFilePath);
 
   return new Promise((resolve) => {

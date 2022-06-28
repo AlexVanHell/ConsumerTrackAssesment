@@ -7,10 +7,12 @@ const main = async () => {
   const csvFileName = `${Date.now()}-log.csv`;
   const csvFilePath = path.join(__dirname, '..', 'output', csvFileName);
 
+  // eslint-disable-next-line no-console
   console.log('Started parsing');
 
   const csvPath = await parseLogToCsv(logFilePath, csvFilePath);
 
+  // eslint-disable-next-line no-console
   console.log('Finished parsing', csvPath);
   process.exit(0);
 };
