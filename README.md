@@ -13,3 +13,11 @@ $ npm start -- path/to/access.log
 ```bash
 $ npm start -- /Users/alejandrovillarroel/Downloads/gobankingrates.com.access.log
 ```
+
+You will see the csv file inside `./output` directory
+
+## Docker
+
+```bash
+$ docker-compose up logparser
+```

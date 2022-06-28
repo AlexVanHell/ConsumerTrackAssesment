@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  logparser:
+    container_name: consumer-track-logparser
+    build: .
+    volumes:
+      - ./output:/app/output:rw

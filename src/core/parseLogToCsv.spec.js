@@ -16,7 +16,7 @@ describe('[Core] parseLogToCsv', () => {
   const stringifyPipeMock = jest.fn();
   const stringifyWriteMock = jest.fn();
 
-  const testLogPath = path.join(__dirname, '..', 'test', 'test.access.log');
+  const testLogPath = path.join(__dirname, '..', '..', 'tests', 'test.access.log');
 
   beforeEach(() => {
     jest.spyOn(fs, 'createWriteStream').mockImplementation(() => null);
